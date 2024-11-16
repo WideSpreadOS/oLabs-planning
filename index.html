@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oLabs 3D Mind Map</title>
+
+    <!-- Third Party Scripts -->
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-forcegraph-component"></script>
+
+    <style>
+        html {
+            background-color: #111;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+<a-scene loading-screen="dotsColor: lightskyblue; backgroundColor: black">
+
+    <a-entity cursor="rayOrigin: mouse; mouseCursorStylesEnabled: true;" raycaster="objects: [forcegraph];"></a-entity>
+    <!-- Camera -->
+    <a-camera id="mapCamera" look-controls="pointerLockEnabled: false"
+        wasd-controls="fly: true; acceleration: 600;">
+        <!-- <a-cursor color="lavender" opacity="0.5" raycaster="objects: [forcegraph]"></a-cursor> -->
+        <a-text id="forcegraph-tooltip" position="0 -0.25 -1" width="2" align="center" color="lightskyblue"></a-text>
+    </a-camera>
+
+
+    <!-- <a-entity forcegraph="
+        json-url: ./json/test.json;
+        node-auto-color-by: user;
+        linkOpacity: 0.1;
+        nodeOpacity: 0.5;
+        nodeResolution: 32;
+        link-directional-arrow-length: 1.5;
+        link-directional-arrow-rel-pos: 1;
+        on-node-hover: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', node ? `${node.description} (${node.user})` : '');
+        on-node-click: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', `${node.description}`);">
+    </a-entity> -->
+    <a-entity id="mindMap" position="0 0 -60" rotation="0 -60 0" forcegraph="
+        json-url: ./olabs-business-planning.json;
+        node-auto-color-by: group;
+        linkOpacity: 0.5;
+        nodeOpacity: 0.5;
+        nodeResolution: 32;
+        link-directional-arrow-length: 1.5;
+        link-directional-arrow-rel-pos: 1;
+        link-directional-particles: 1;
+        link-directional-particle-speed: 0.02; 
+        link-directional-particle-color: lightskyblue;
+        link-color: 'red';
+        on-node-hover: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', node ? `${node.title}\n(ID: ${node.id})` : '');
+        on-node-click: node => {
+            document.querySelector('#forcegraph-tooltip').setAttribute('value', node ? `${node.title}\n${node.body}` : '')
+            moveMap(node)
+        }">
+    </a-entity>
+</a-scene>
+
+
+<!--
+json-url: ./json/olabs-business-planning.json;
+node => document.querySelector('#mindMap ').setAttribute('color', 'lime')
+document.querySelector('#forcegraph-tooltip').setAttribute('value', `${node.body}`); 
+-->
+
+<script>
+
+
+    const mindMap = document.querySelector('#mindMap')
+
+    mindMap.addEventListener('click', e => {
+        const mapAttrs = mindMap.attributes
+
+        testNodes = mapAttrs[2].ownerElement.childNodes[0].ownerDocument.all[21].object3D.children[0].children
+        console.log('testNodes: ', testNodes)
+
+        testNodes.forEach((mindMapNode, index) => {
+            if (mindMapNode.__data.node_type === 'MapElement') {
+                console.log(mindMapNode.__data.id)
+                // mindMapNode.setAttribute('id', `NODE__${index}`)
+                newNodeTitle.setAttribute('value', mindMapNode.__data.title)
+                document.querySelector(`#NODE__${index}`).appendChild(newNodeTitle)
+
+
+            }
+        })
+
+
+        allNodes = mapAttrs[2].ownerElement.childNodes[0].parentElement.object3DMap.forcegraphGroup.children
+        allNodes.forEach(mapNode => {
+            mapNode.addEventListener('click', e => {
+                moveMap(mapNode)
+            })
+
+            // console.table(node.__data)
+
+            let thisNode = mapNode.__data.id
+            let newText = document.createElement('a-text')
+            const nodeTitle = mapNode.__data.title
+            console.log(mapNode.__data.title)
+            newText.setAttribute('value', nodeTitle)
+            newText.setAttribute('position', '0 0 1')
+            mapNode.appendChild(newText)
+
+        })
+        // console.log(mindMap.getAttribute(forcegraph))
+        // mindMap.setAttribute('forcegraph', 'getGraphBbox')
+    })
+
+
+    function moveMap(node) {
+        const mapCamera = document.getElementById('mapCamera')
+        mapCamera.setAttribute('position', `${node.x} ${node.y} ${node.z + 10}`)
+        mapCamera.setAttribute('rotation', `${node.x} ${node.y} ${node.z}`)
+        console.log('Node X: ', node.x)
+        console.log('Node Y: ', node.y)
+        console.log('Node Z: ', (node.z + 10))
+        mapCamera.setAttribute('rotation', '0 0 0')
+        openNode(node)
+    }
+
+    function openNode(node) {
+        console.log('INSIDE openNode(node): ', node)
+        if (node.__threeObj.geometry.parameters.radius === '2') {
+            node.setAttribute('radius', 2)
+        }
+    }
+
+</script>
+
+</body>
+</html>

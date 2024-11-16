@@ -1,0 +1,173 @@
+{
+    "nodes": [
+        {
+            "id": "0000001",
+            "node_type": "MapElement",
+            "title": "oLabs",
+            "quick_tip": "oLabs Business Planning",
+            "body": "This is ground zero for the creation of oLabs",
+            "notes": ["Test Note 1", "Test Note 2", "Test Note 3"],
+            "tags": ["olabs", "business", "plan"],
+            "group": 1,
+            "color": "#fff"
+
+        },
+        {
+            "id": "0000002",
+            "node_type": "MapElement",
+            "title": "Olson Estates",
+            "quick_tip": "OE Property Management",
+            "body": "This is ground zero for the creation of Olson Estates",
+            "notes": [""],
+            "tags": ["olson", "estates", "oe"],
+            "group": 2,
+            "color": "#1f78b4"
+
+
+        },
+        {
+            "id": "0000003",
+            "node_type": "MapElement",
+            "title": "DreamScapes",
+            "quick_tip": "DreamScapes Landscape & Hardscape",
+            "body": "This is ground zero for the creation of DreamScapes",
+            "notes": [""],
+            "tags": ["dreamscapes", "landscape", "hardscape"],
+            "group": 3,
+            "color": "lime"
+
+
+        },
+        {
+            "id": "0000013",
+            "node_type": "MapElement",
+            "title": "Lawn Care",
+            "quick_tip": "Lawn Care",
+            "body": "Everything to do with clients grassed areas on their properties",
+            "notes": [""],
+            "tags": ["dreamscapes", "landscape", "lawn"],
+            "group": 3,
+            "color": "lime",
+            "__threeObj.geometry.parameters.radius": "2"
+
+
+        },
+        {
+            "id": "0000023",
+            "node_type": "MapElement",
+            "title": "Hardscapes",
+            "quick_tip": "Stone & Masonry",
+            "body": "Everything to do with clients outdoor structural elements",
+            "notes": [""],
+            "tags": ["dreamscapes", "hardscape", "masonry"],
+            "group": 3,
+            "color": "lime",
+            "__threeObj.geometry.parameters.radius": "2"
+
+
+        },
+        {
+            "id": "0000004",
+            "node_type": "MapElement",
+            "title": "Spread",
+            "quick_tip": "Spread Telecommunications",
+            "body": "This is ground zero for the creation of Spread (WideSpread)",
+            "notes": [""],
+            "tags": ["spread", "widespread", "ws"],
+            "group": 4,
+            "color": "lightskyblue"
+
+
+        },
+        {
+            "id": "0000005",
+            "node_type": "MapElement",
+            "title": "Skyros",
+            "quick_tip": "Skyros Aeronautics",
+            "body": "This is ground zero for the creation of Skyros",
+            "notes": [""],
+            "tags": ["skyros", "", ""],
+            "group": 5,
+            "color": "orangered"
+
+
+        },
+        {
+            "id": "0000006",
+            "node_type": "MapElement",
+            "title": "Cycle",
+            "quick_tip": "Cycle Waste Management",
+            "body": "This is ground zero for the creation of Cycle",
+            "notes": [""],
+            "tags": ["cycle", "recycle", "waste"],
+            "group": 6,
+            "color": "green"
+
+
+        },
+        {
+            "id": "0000007",
+            "node_type": "MapElement",
+            "title": "Agros",
+            "quick_tip": "Agros Agriculture",
+            "body": "This is ground zero for the creation of Agros",
+            "notes": [""],
+            "tags": ["skyros", "flight", "transportation"],
+            "group": 7,
+            "color": "lightgreen"
+
+
+        },
+        {
+            "id": "0000008",
+            "node_type": "MapElement",
+            "title": "Aether",
+            "quick_tip": "Aether Astronautics",
+            "body": "This is ground zero for the creation of Aether",
+            "notes": [""],
+            "tags": ["aether", "space", "transportation"],
+            "group": 8,
+            "color": "#333"
+
+
+        }
+    ],
+    "links": [
+        {
+            "source": "0000001",
+            "target": "0000002"
+        },
+        {
+            "source": "0000001",
+            "target": "0000003"
+        },
+        {
+            "source": "0000001",
+            "target": "0000004"
+        },
+        {
+            "source": "0000001",
+            "target": "0000005"
+        },
+        {
+            "source": "0000001",
+            "target": "0000006"
+        },
+        {
+            "source": "0000001",
+            "target": "0000007"
+        },
+        {
+            "source": "0000001",
+            "target": "0000008"
+        },
+        {
+            "source": "0000003",
+            "target": "0000013"
+        },
+        {
+            "source": "0000003",
+            "target": "0000023"
+        }
+    ]
+}
