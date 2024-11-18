@@ -11,7 +11,7 @@
 
     <style>
         html {
-            background-color: #222;
+            background-color: #000;
             color: #fff;
         }
     </style>
@@ -26,16 +26,32 @@
     renderer="antialias: true;"
 >
 
+    <a-assets id="assetList">
+        <img src="./media/3.jpeg" id="bg1">
+    </a-assets>
+
+    <a-sphere id="nodeMenu" radius="6" position="0 0 0"
+        material="alphaTest: 0.34; offset: [object Object]; opacity: 1; repeat: [object Object]; side: single; transparent: true; ambientOcclusionTextureOffset: [object Object]; ambientOcclusionTextureRepeat: [object Object]; color: aqua; displacementTextureOffset: [object Object]; displacementTextureRepeat: [object Object]; metalness: 0.28; metalnessTextureOffset: [object Object]; metalnessTextureRepeat: [object Object]; normalScale: [object Object]; normalTextureOffset: [object Object]; normalTextureRepeat: [object Object]; roughness: 1; roughnessTextureOffset: [object Object]; roughnessTextureRepeat: [object Object]"
+    ></a-sphere>
+
     <a-entity cursor="rayOrigin: mouse; mouseCursorStylesEnabled: true;" raycaster="objects: [forcegraph];"></a-entity>
     <!-- Camera -->
     <a-camera
-        id="mapCamera2"
+        id="mapCamera"
         look-controls="pointerLockEnabled: false"
         wasd-controls="fly: true; acceleration: 600;">
 
-        <a-cursor color="lightskyblue" opacity="0.5" raycaster="objects: [forcegraph]"></a-cursor>
+        <a-cursor color="lightskyblue" opacity="1" raycaster="objects: [forcegraph]"></a-cursor>
 
-        <a-text id="forcegraph-tooltip" position="0 -0.25 -1" width="2" align="center" color="lightskyblue"></a-text>
+        <a-entity id="nodeContainer" position="0 -0.05 -0.75" scale="0.5 0.5 0.5"
+        >
+            <a-text id="forcegraph-tooltip" width="2" align="center" color="lightskyblue"></a-text>
+            <a-entity position="0 -0.25 0" scale="1 1 1" rotation="0 0 0">
+                <a-text id="tag1" position="-0.5 0 0" width="1" align="center" color="orangered"></a-text>
+                <a-text id="tag2" position="0 0 0" width="1" align="center" color="orangered"></a-text>
+                <a-text id="tag3" position="0.5 0 0" width="1" align="center" color="orangered"></a-text>
+            </a-entity>
+        </a-entity>
 
     </a-camera>
 
@@ -54,9 +70,10 @@
     </a-entity> -->
     
     
-    <a-entity id="mindMap" position="0 0 -50" rotation="0 -60 0"forcegraph="jsonUrl: ./olabs-business-planning.json; nodeResolution: 32; nodeAutoColorBy: group; nodeOpacity: 0.5; linkColor: #000000; linkOpacity: 0.5; linkResolution: 7.4; linkCurvature: 0.5; linkCurveRotation: 0; linkDirectionalArrowLength: 1; linkDirectionalArrowRelPos: 0; linkDirectionalArrowResolution: 10; linkDirectionalParticles: 4; linkDirectionalParticleSpeed: 0.001; linkDirectionalParticleColor: #000; onNodeHover: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', node ? `${node.title}\n(ID: ${node.id})` : ''); onNodeClick: node => {
+    <a-entity id="mindMap" position="0 0 -50" rotation="0 0 0"forcegraph="jsonUrl: ./olabs-business-planning.json; nodeResolution: 32; nodeAutoColorBy: group; nodeOpacity: 1; linkColor: #000000; linkOpacity: 0.5; linkResolution: 7.4; linkCurvature: 0.5; linkCurveRotation: 0; linkDirectionalArrowLength: 1; linkDirectionalArrowRelPos: 0; linkDirectionalArrowResolution: 10; linkDirectionalParticles: 4; linkDirectionalParticleSpeed: 0.001; linkDirectionalParticleColor: #000; onNodeHover: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', node ? `${node.title}\n(ID: ${node.id})` : ''); onNodeClick: node => {
             document.querySelector('#forcegraph-tooltip').setAttribute('value', node ? `${node.title}\n${node.body}` : '')
-            moveMap(node)
+            openNodeMenu(node)
+            createNodeMarker(node)
         }; d3AlphaDecay: 0.023">
         
     </a-entity>
@@ -78,6 +95,9 @@
             moveMap(node)
         }">
     </a-entity> -->
+
+    <a-sky src="#bg1" material="opacity: 0.25"></a-sky>
+
 </a-scene>
 
 
@@ -90,41 +110,43 @@ document.querySelector('#forcegraph-tooltip').setAttribute('value', `${node.body
 <script>
 
 
-    const mindMap = document.querySelector('#mindMap')
+    const
+        mindMap = document.querySelector('#mindMap'),
+        nodeMenu = document.querySelector('#nodeMenu')
+
 
     mindMap.addEventListener('click', e => {
         const mapAttrs = mindMap.attributes
 
-        testNodes = mapAttrs[2].ownerElement.childNodes[0].ownerDocument.all[21].object3D.children[0].children
-        console.log('testNodes: ', testNodes)
+        // const testNodes = mapAttrs[2].ownerElement.childNodes[0].ownerDocument.all[21].object3D.children[0].children
+        // console.log('testNodes: ', testNodes)
 
-        testNodes.forEach((mindMapNode, index) => {
-            if (mindMapNode.__data.node_type === 'MapElement') {
-                console.log(mindMapNode.__data.id)
-                // mindMapNode.setAttribute('id', `NODE__${index}`)
-                newNodeTitle.setAttribute('value', mindMapNode.__data.title)
-                document.querySelector(`#NODE__${index}`).appendChild(newNodeTitle)
+        // testNodes.forEach((mindMapNode, index) => {
+        //     if (mindMapNode.__data.node_type === 'MapElement') {
+        //         // console.log(mindMapNode.__data.id)
+        //         // mindMapNode.setAttribute('id', `NODE__${index}`)
+        //         newNodeTitle.setAttribute('value', mindMapNode.__data.title)
+        //         document.querySelector(`#NODE__${index}`).appendChild(newNodeTitle)
 
 
-            }
-        })
+        //     }
+        // })
 
 
         allNodes = mapAttrs[2].ownerElement.childNodes[0].parentElement.object3DMap.forcegraphGroup.children
+
         allNodes.forEach(mapNode => {
-            mapNode.addEventListener('click', e => {
-                moveMap(mapNode)
-            })
+
 
             // console.table(node.__data)
 
             let thisNode = mapNode.__data.id
             let newText = document.createElement('a-text')
             const nodeTitle = mapNode.__data.title
-            console.log(mapNode.__data.title)
+            // console.log(mapNode.__data.title)
             newText.setAttribute('value', nodeTitle)
             newText.setAttribute('position', '0 0 1')
-            mapNode.appendChild(newText)
+            // mapNode.appendChild(newText)
 
         })
         // console.log(mindMap.getAttribute(forcegraph))
@@ -143,10 +165,61 @@ document.querySelector('#forcegraph-tooltip').setAttribute('value', `${node.body
         openNode(node)
     }
 
+    function createNodeMarker(node) {
+        const
+            tag1 = document.getElementById('tag1'),
+            tag2 = document.getElementById('tag2'),
+            tag3 = document.getElementById('tag3')
+
+        const location = {
+            x: node.x,
+            y: node.y,
+            z: node.z
+        }
+
+        console.log(location)
+
+        const nodeData = {
+            id: node.id,
+            node_type: node.node_type,
+            title: node.title,
+            quick_tip: node.quick_tip,
+            body: node.body,
+            notes: node.notes,
+            tags: node.tags,
+            group: node.group,
+            color: node.color
+
+        }
+        // console.log('nodeData: ', nodeData)
+        console.log('title: ', nodeData.title)
+        console.log('tags: ', nodeData.tags)
+        tag1.setAttribute('value', nodeData.tags[0])
+        tag2.setAttribute('value', nodeData.tags[1])
+        tag3.setAttribute('value', nodeData.tags[2])
+
+    }
+
+
+    function openNodeMenu(node) {
+
+        const location = {
+            x: node.x,
+            y: node.y,
+            z: node.z
+        }
+
+
+        console.log(nodeMenu)
+
+        nodeMenu.setAttribute('position', `${location.x}, ${location.y}, ${location.z - 50}`)
+
+    }
+
     function openNode(node) {
         console.log('INSIDE openNode(node): ', node)
         if (node.__threeObj.geometry.parameters.radius === '2') {
-            node.setAttribute('radius', 2)
+            node.setAttribute('radius', '1.5')
         }
     }
 
