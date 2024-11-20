@@ -1,7 +1,7 @@
 {
     "nodes": [
         {
-            "id": "0000001",
+            "id": "1a1a1a",
             "node_type": "MapElement",
             "title": "oLabs",
             "quick_tip": "oLabs Business Planning",
@@ -13,7 +13,7 @@
 
         },
         {
-            "id": "0000002",
+            "id": "2a1a1a",
             "node_type": "MapElement",
             "title": "Olson Estates",
             "quick_tip": "OE Property Management",
@@ -26,7 +26,99 @@
 
         },
         {
-            "id": "0000003",
+            "id": "2a2a1a",
+            "node_type": "MapElement",
+            "title": "Divisions",
+            "quick_tip": "OE Divisions",
+            "body": "Complete List of all OE departments",
+            "notes": [""],
+            "tags": ["oe", "divisions", "departments"],
+            "group": 2,
+            "color": "#1f78b4"
+
+
+        },
+        {
+            "id": "2a2b1a",
+            "node_type": "MapElement",
+            "title": "Painting",
+            "quick_tip": "Painting",
+            "body": "Interior & Exterior Painting",
+            "notes": [""],
+            "tags": ["oe", "divisions", "painting"],
+            "group": 2,
+            "color": "#1f78b4"
+        },
+        {
+            "id": "2a2b2a",
+            "node_type": "MapElement",
+            "title": "Cabinetry & Carpentry",
+            "quick_tip": "Cabinetry & Carpentry",
+            "body": "All style cabinets and any type of custom trim and shelving. Interior & Exterior.",
+            "notes": [""],
+            "tags": ["oe", "divisions", "carpentry"],
+            "group": 2,
+            "color": "#1f78b4"
+        },
+        {
+            "id": "2a2b3a",
+            "node_type": "MapElement",
+            "title": "Roofing",
+            "quick_tip": "Roofing",
+            "body": "Asphalt, Tile & Metal Roofing",
+            "notes": [""],
+            "tags": ["oe", "divisions", "roofing"],
+            "group": 2,
+            "color": "#1f78b4"
+        },
+        {
+            "id": "2a2b4a",
+            "node_type": "MapElement",
+            "title": "Moving",
+            "quick_tip": "Moving",
+            "body": "All levels of moving services.",
+            "notes": [""],
+            "tags": ["oe", "divisions", "moving"],
+            "group": 2,
+            "color": "#1f78b4"
+        },
+        {
+            "id": "2a2b5a",
+            "node_type": "MapElement",
+            "title": "Electrical & Home Networking",
+            "quick_tip": "Electrical & Home Networking",
+            "body": "All electrical and home networking solutions.",
+            "notes": [""],
+            "tags": ["oe", "divisions", "electrical"],
+            "group": 2,
+            "color": "#1f78b4"
+        },
+        {
+            "id": "2a2b6a",
+            "node_type": "MapElement",
+            "title": "Plumbing",
+            "quick_tip": "Plumbing",
+            "body": "All plumbing solutions.",
+            "notes": [""],
+            "tags": ["oe", "divisions", "plumbing"],
+            "group": 2,
+            "color": "#1f78b4"
+        },
+        {
+            "id": "2a3a1a",
+            "node_type": "MapElement",
+            "title": "Overview",
+            "quick_tip": "General Overview",
+            "body": "Olson Estates is a property development, management & maintenece company.",
+            "notes": [""],
+            "tags": ["oe", "overview", "olson estates"],
+            "group": 2,
+            "color": "#1f78b4"
+
+
+        },
+        {
+            "id": "3a1a1a",
             "node_type": "MapElement",
             "title": "DreamScapes",
             "quick_tip": "DreamScapes Landscape & Hardscape",
@@ -39,7 +131,7 @@
 
         },
         {
-            "id": "0000013",
+            "id": "3a2a1a",
             "node_type": "MapElement",
             "title": "Lawn Care",
             "quick_tip": "Lawn Care",
@@ -53,7 +145,7 @@
 
         },
         {
-            "id": "0000023",
+            "id": "3a3a1a",
             "node_type": "MapElement",
             "title": "Hardscapes",
             "quick_tip": "Stone & Masonry",
@@ -67,7 +159,7 @@
 
         },
         {
-            "id": "0000004",
+            "id": "4a1a1a",
             "node_type": "MapElement",
             "title": "Spread",
             "quick_tip": "Spread Telecommunications",
@@ -80,7 +172,7 @@
 
         },
         {
-            "id": "0000005",
+            "id": "5a1a1a",
             "node_type": "MapElement",
             "title": "Skyros",
             "quick_tip": "Skyros Aeronautics",
@@ -93,7 +185,7 @@
 
         },
         {
-            "id": "0000006",
+            "id": "6a1a1a",
             "node_type": "MapElement",
             "title": "Cycle",
             "quick_tip": "Cycle Waste Management",
@@ -106,7 +198,7 @@
 
         },
         {
-            "id": "0000007",
+            "id": "7a1a1a",
             "node_type": "MapElement",
             "title": "Agros",
             "quick_tip": "Agros Agriculture",
@@ -119,7 +211,7 @@
 
         },
         {
-            "id": "0000008",
+            "id": "8a1a1a",
             "node_type": "MapElement",
             "title": "Aether",
             "quick_tip": "Aether Astronautics",
@@ -130,44 +222,93 @@
             "color": "#333"
 
 
+        },
+        {
+            "id": "9a1a1a",
+            "node_type": "MapElement",
+            "title": "GoCanna",
+            "quick_tip": "Cannibis Grower & Retailer",
+            "body": "This is ground zero for the creation of GoCanna",
+            "notes": [""],
+            "tags": ["gocanna", "cannibis", "thc"],
+            "group": 8,
+            "color": "#fff"
+
+
         }
     ],
     "links": [
         {
-            "source": "0000001",
-            "target": "0000002"
+            "source": "1a1a1a",
+            "target": "2a1a1a"
         },
         {
-            "source": "0000001",
-            "target": "0000003"
+            "source": "2a2a1a",
+            "target": "2a2b1a"
         },
         {
-            "source": "0000001",
-            "target": "0000004"
+            "source": "2a2a1a",
+            "target": "2a2b2a"
         },
         {
-            "source": "0000001",
-            "target": "0000005"
+            "source": "2a2a1a",
+            "target": "2a2b3a"
         },
         {
-            "source": "0000001",
-            "target": "0000006"
+            "source": "2a2a1a",
+            "target": "2a2b4a"
         },
         {
-            "source": "0000001",
-            "target": "0000007"
+            "source": "2a2a1a",
+            "target": "2a2b5a"
         },
         {
-            "source": "0000001",
-            "target": "0000008"
+            "source": "2a2a1a",
+            "target": "2a2b6a"
         },
         {
-            "source": "0000003",
-            "target": "0000013"
+            "source": "1a1a1a",
+            "target": "3a1a1a"
         },
         {
-            "source": "0000003",
-            "target": "0000023"
+            "source": "1a1a1a",
+            "target": "4a1a1a"
+        },
+        {
+            "source": "1a1a1a",
+            "target": "5a1a1a"
+        },
+        {
+            "source": "1a1a1a",
+            "target": "6a1a1a"
+        },
+        {
+            "source": "1a1a1a",
+            "target": "7a1a1a"
+        },
+        {
+            "source": "1a1a1a",
+            "target": "8a1a1a"
+        },
+        {
+            "source": "3a1a1a",
+            "target": "3a2a1a"
+        },
+        {
+            "source": "3a1a1a",
+            "target": "3a3a1a"
+        },
+        {
+            "source": "2a1a1a",
+            "target": "2a2a1a"
+        },
+        {
+            "source": "2a1a1a",
+            "target": "2a3a1a"
+        },
+        {
+            "source": "1a1a1a",
+            "target": "9a1a1a"
         }
     ]
 }
