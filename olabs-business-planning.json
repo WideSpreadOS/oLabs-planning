@@ -159,6 +159,20 @@
 
         },
         {
+            "id": "3a4a1a",
+            "node_type": "MapElement",
+            "title": "Horticulture",
+            "quick_tip": "Horticulture",
+            "body": "Everything to do with clients flowers, plants, and trees",
+            "notes": [""],
+            "tags": ["dreamscapes", "horticulture", "pruning"],
+            "group": 3,
+            "color": "lime",
+            "__threeObj.geometry.parameters.radius": "2"
+
+
+        },
+        {
             "id": "4a1a1a",
             "node_type": "MapElement",
             "title": "Spread",
@@ -166,6 +180,97 @@
             "body": "This is ground zero for the creation of Spread (WideSpread)",
             "notes": [""],
             "tags": ["spread", "widespread", "ws"],
+            "group": 4,
+            "color": "lightskyblue"
+
+
+        },
+        {
+            "id": "4a2a1a",
+            "node_type": "MapElement",
+            "title": "SpreadOS",
+            "quick_tip": "SpreadOS",
+            "body": "Spread Operating System. Native in 2D, 3D. VR, AR, HUD, IoT.",
+            "notes": [""],
+            "tags": ["spread", "spreados", "operating system"],
+            "group": 4,
+            "color": "lightskyblue"
+
+
+        },
+        {
+            "id": "4a3a1a",
+            "node_type": "MapElement",
+            "title": "WideSpread",
+            "quick_tip": "WideSpread",
+            "body": "Spreads built-in decentralized global (cosmic) network. Native in 2D, 3D. VR, AR, HUD, IoT.",
+            "notes": [""],
+            "tags": ["spread", "widespread", "network"],
+            "group": 4,
+            "color": "lightskyblue"
+
+
+        },
+        {
+            "id": "4a4a1a",
+            "node_type": "MapElement",
+            "title": "SpreadShield",
+            "quick_tip": "SpreadShield",
+            "body": "Dynamic Full Windshield Heads-up Display. AR map markers, video chat, passenger video media, navigation, menus, anything available on WideSpread.",
+            "notes": [""],
+            "tags": ["spread", "", ""],
+            "group": 4,
+            "color": "lightskyblue"
+
+
+        },
+        {
+            "id": "4a5a1a",
+            "node_type": "MapElement",
+            "title": "FlexFloor",
+            "quick_tip": "FlexFloor",
+            "body": "FlexFloor is an automated pneumatic flooring system that connects to Virtual Spaces inside WideSpread. When there is a chair or couch or 'something' in VR, FlexFloor knows where those 3D objects are in virtual space, so it takes those coordinates and translates them to the physical floor space in the users home (physical reality). Now the user has a physical mass fused into the virtual visuals.",
+            "notes": [""],
+            "tags": ["spread", "flexfloor", "pneumatic"],
+            "group": 4,
+            "color": "lightskyblue"
+
+
+        },
+        {
+            "id": "4a6a1a",
+            "node_type": "MapElement",
+            "title": "SpreadWear",
+            "quick_tip": "SpreadWear",
+            "body": "Interactive clothing line for WideSpread. Built-in rumble-packs, air conditioned options, heated options, built-in sensors.",
+            "notes": [""],
+            "tags": ["spread", "spreadwear", "clothing"],
+            "group": 4,
+            "color": "lightskyblue"
+
+
+        },
+        {
+            "id": "4a7a1a",
+            "node_type": "MapElement",
+            "title": "SpreadSet",
+            "quick_tip": "SpreadSet",
+            "body": "WideSpreads Handheld Device. Connects to the 'Halo' for VR/AR (first-person) experience, also allows for sharing 360deg experiences live.",
+            "notes": [""],
+            "tags": ["spread", "spreadset", "phone"],
+            "group": 4,
+            "color": "lightskyblue"
+
+
+        },
+        {
+            "id": "4a8a1a",
+            "node_type": "MapElement",
+            "title": "SpreadPod",
+            "quick_tip": "SpreadPod",
+            "body": "WideSpreads 360 Camera Stationary Stand",
+            "notes": [""],
+            "tags": ["spread", "spreadpod", "monopod"],
             "group": 4,
             "color": "lightskyblue"
 
@@ -275,6 +380,34 @@
             "target": "4a1a1a"
         },
         {
+            "source": "4a1a1a",
+            "target": "4a2a1a"
+        },
+        {
+            "source": "4a1a1a",
+            "target": "4a3a1a"
+        },
+        {
+            "source": "4a1a1a",
+            "target": "4a4a1a"
+        },
+        {
+            "source": "4a1a1a",
+            "target": "4a5a1a"
+        },
+        {
+            "source": "4a1a1a",
+            "target": "4a6a1a"
+        },
+        {
+            "source": "4a1a1a",
+            "target": "4a7a1a"
+        },
+        {
+            "source": "4a1a1a",
+            "target": "4a8a1a"
+        },
+        {
             "source": "1a1a1a",
             "target": "5a1a1a"
         },
@@ -297,6 +430,10 @@
         {
             "source": "3a1a1a",
             "target": "3a3a1a"
+        },
+        {
+            "source": "3a1a1a",
+            "target": "3a4a1a"
         },
         {
             "source": "2a1a1a",

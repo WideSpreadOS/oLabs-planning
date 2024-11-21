@@ -43,13 +43,13 @@
 
         <a-cursor color="lightskyblue" opacity="1" raycaster="objects: [forcegraph]"></a-cursor>
 
-        <a-entity id="nodeContainer" position="0 -0.05 -0.75" scale="0.5 0.5 0.5"
+        <a-entity id="nodeContainer" position="0 -0.05 -0.75" scale="0.75 0.75 0.15"
         >
-            <a-text id="forcegraph-tooltip" width="2" align="center" color="lightskyblue"></a-text>
+            <a-text id="forcegraph-tooltip" width="1" align="center" color="lightskyblue"></a-text>
             <a-entity position="0 -0.25 0" scale="1 1 1" rotation="0 0 0">
-                <a-text id="tag1" position="-0.5 0 0" width="1" align="center" color="orangered"></a-text>
-                <a-text id="tag2" position="0 0 0" width="1" align="center" color="orangered"></a-text>
-                <a-text id="tag3" position="0.5 0 0" width="1" align="center" color="orangered"></a-text>
+                <a-text id="tag1" position="-0.5 0 0" width="1" align="center" color="#fff"></a-text>
+                <a-text id="tag2" position="0 0 0" width="1" align="center" color="#fff"></a-text>
+                <a-text id="tag3" position="0.5 0 0" width="1" align="center" color="#fff"></a-text>
             </a-entity>
         </a-entity>
 
@@ -219,7 +219,7 @@ document.querySelector('#forcegraph-tooltip').setAttribute('value', `${node.body
     function openNode(node) {
         console.log('INSIDE openNode(node): ', node)
         if (node.__threeObj.geometry.parameters.radius === '2') {
-            node.setAttribute('radius', '1.5')
+            node.setAttribute('radius', '1.275')
         }
     }
 
